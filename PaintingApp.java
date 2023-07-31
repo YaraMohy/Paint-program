@@ -231,3 +231,26 @@ public class PaintingApp extends Applet{
 			repaint();
 		}
 	}
+class MotionListener implements MouseMotionListener{
+		public void mouseMoved(MouseEvent e) {}
+		public void mouseDragged(MouseEvent e) {
+			x2=e.getX();
+			y2=e.getY();
+			Graphics g=getGraphics();
+			width= Math.abs(x2-x1);
+			height = Math.abs(y2-y1);
+			switch(currentShape){
+				case 'e':
+					shapesVector.add(new Rect( x2, y2,eraserWidth, eraserHeight, 'e', filledPressed));
+					break;
+				case 'p':
+					shapesVector.add(new Line(x1, y1, x2, y2, 'l'));
+					counter+=1;
+					if(counter % 2 ==0){
+						x1=x2;
+						y1=y2;
+					}	
+					break;
+			}
+		}
+	}
