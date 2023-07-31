@@ -198,3 +198,36 @@ public class PaintingApp extends Applet{
 			}	
 		g.setColor(currentColor);
 	}
+	class MouseListener_ implements MouseListener{
+		public void mousePressed(MouseEvent e){
+			x1= x2 =e.getX();
+			y1= y2 =e.getY();
+			repaint();
+		}
+		public void mouseExited(MouseEvent e) {}
+		public void mouseClicked(MouseEvent e) {}
+		public void mouseEntered(MouseEvent e)  {}
+		public void mouseReleased(MouseEvent e)  {
+			x2=e.getX();
+			y2=e.getY();
+			width= Math.abs(x2-x1);
+			Graphics g=getGraphics();
+			height = Math.abs(y2-y1);
+			switch(currentShape){
+				case 'l':
+					shapesVector.add(new Line(x1, y1, x2, y2, 'l'));
+					break;
+				case 'r':
+					x= (x1-x2) <0 ? x1 : x2;
+					y= (y1-y2) <0 ? y1 : y2;
+					shapesVector.add(new Rect(x1, y1, width, height, 'r', filledPressed));
+					break;
+				case 'c':
+					x= (x1-x2) <0 ? x1 : x2;
+					y= (y1-y2) <0 ? y1 : y2;
+					shapesVector.add(new Circle(x1, y1, width, height, 'c', filledPressed));
+					break;
+			}
+			repaint();
+		}
+	}
