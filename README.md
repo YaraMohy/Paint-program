@@ -3,8 +3,7 @@
 This PaintingApp applet allows the user to draw various shapes and manipulate colors. The user can select different shapes to draw: Line, Rectangle and Circle.
 The user can choose between a pen tool and an eraser tool. The pen draws freehand lines while the eraser erases parts of the canvas. The user can select from different colors. 
 
-
-![Capture](https://github.com/YaraMohy/Paint-program-team-4/assets/139645547/5bba57ea-9d45-4fdb-842c-eb1f467d7d0c)
+![Capture](https://github.com/YaraMohy/Paint-program-team-4/assets/139645547/e4d41394-0af4-4f97-8701-1546c8883250)
 
 Class Declarations:
 
